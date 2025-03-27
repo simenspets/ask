@@ -13,7 +13,7 @@ function initializeChat() {
 
   // Stil containeren
   chatContainer.style.minHeight = '200px'; // Minimumshøyde på 200px
-  chatContainer.style.maxHeight = '300px'; // Maksimumshøyde på 300px
+  chatContainer.style.maxHeight = '250px'; // Maksimumshøyde på 300px
   chatContainer.style.width = '634.5px';   // Bredde på 634.5px
   chatContainer.style.maxWidth = '634.5px'; // Maksimumsbredde på 634.5px
   chatContainer.style.marginTop = '8px';   // Litt luft over widgeten
