@@ -158,7 +158,7 @@
         @media (min-width: 768px) {
           section.product-view__main {
             display: grid !important;
-            grid-template-columns: 1fr 350px !important;
+            grid-template-columns: 1fr 525px !important;
             gap: 2rem !important;
             position: relative;
           }
@@ -166,7 +166,7 @@
             grid-column: 2;
             align-self: start;
             width: 100% !important;
-            max-width: 350px !important;
+            max-width: 525px !important;
             margin-left: auto;
             margin-right: 0;
           }
