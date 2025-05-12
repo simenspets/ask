@@ -309,24 +309,32 @@
       const screenWidth = window.innerWidth;
       
       if (screenWidth >= config.largeBreakpoint) {
-        // For stor desktop (>= 1024px): Plasser INNE i section.product-view__main, helt til høyre
+        // For stor desktop (>= 1024px): Plasser INNE i section.product-view__main, rett over Similar styles hvis den finnes
         const mainSection = document.querySelector(config.targetSelectorLargeDesktop);
-        if (mainSection) {
+        const similarSection = mainSection ? mainSection.querySelector('section.similar-product-list.product-view__similar-products') : null;
+        if (mainSection && similarSection) {
+          mainSection.insertBefore(container, similarSection);
+          log('Widget plassert over Similar styles (large desktop)');
+        } else if (mainSection) {
           mainSection.appendChild(container);
-          log('Widget plassert helt til høyre i section.product-view__main');
+          log('Widget plassert helt til høyre i section.product-view__main (large desktop)');
         } else {
           document.body.appendChild(container);
-          log('Using document.body as fallback container');
+          log('Using document.body as fallback container (large desktop)');
         }
       } else if (screenWidth >= config.breakpoint && screenWidth < config.mediumBreakpoint) {
-        // For medium desktop (768px - 1028px): Plasser INNE i section.product-view__main, helt til høyre
+        // For medium desktop (768px - 1028px): Plasser INNE i section.product-view__main, rett over Similar styles hvis den finnes
         const mainSection = document.querySelector(config.targetSelectorMediumDesktop);
-        if (mainSection) {
+        const similarSection = mainSection ? mainSection.querySelector('section.similar-product-list.product-view__similar-products') : null;
+        if (mainSection && similarSection) {
+          mainSection.insertBefore(container, similarSection);
+          log('Widget plassert over Similar styles (medium desktop)');
+        } else if (mainSection) {
           mainSection.appendChild(container);
-          log('Widget plassert helt til høyre i section.product-view__main (medium)');
+          log('Widget plassert helt til høyre i section.product-view__main (medium desktop)');
         } else {
           document.body.appendChild(container);
-          log('Using document.body as fallback container');
+          log('Using document.body as fallback container (medium desktop)');
         }
       } else {
         // For mobil (< 768px): bruk standard mobilplassering
